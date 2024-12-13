@@ -17,23 +17,25 @@ This project allows users to upload an image, draw a mask on it,and export both 
 # Libraries Used:
 
  => React - Javscript library for building the user interface.
+ 
  => react-canvas-draw : Used for implementing the drawing canvas where users can create the mask on images.
+ 
  =>FileReader API : Native browser API used to read images files uploaded by the user and display them as data URLs.
 
  # How to Run the Project Locally: 
 
 1. Clone the repository to your local machine:
 
-git clone <repository-url>
-cd image-inpainting-widget
+  git clone <repository-url>
+  cd image-inpainting-widget
 
 2. Install the necessary dependencies: 
 
-npm install 
+   npm install 
 
 3. Start the development server: 
 
-npm start 
+   npm start 
 
 4.Open your browser and go to http://localhost:3000 to view the project.
 
