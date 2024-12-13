@@ -55,7 +55,7 @@ This project allows users to upload an image, draw a mask on it,and export both 
 
  3. Exporting the Mask Image Correctly: 
 
- * Challenge: Ensuring the mask had white for the drawn areas and black for untouched areas was challenging. 
+ * Challenge-3: Ensuring the mask had white for the drawn areas and black for untouched areas was challenging. 
 
- *Solution : I created a temporary canvas, filled it with black, and overlayed the white strokes from the drawing to generate the correct mask.
+ * Solution : I created a temporary canvas, filled it with black, and overlayed the white strokes from the drawing to generate the correct mask.
 
