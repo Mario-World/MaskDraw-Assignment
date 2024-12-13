@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Image Inpainting Widget Tool 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project allows users to upload an image, draw a mask on it,and export both the original image and the generated mask as separate images. It uses a canvas drawing library for creating the mask and React for building the user interface. 
 
-## Available Scripts
+# Features: 
+ 
+#Upload an image (JPEG/PNG).
 
-In the project directory, you can run:
+#Draw a mask using a brush tool.
 
-### `npm start`
+#Export the mask and view the original image alongside the mask.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#Adjust brush size for more fine-tuned drawings.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#Responsive layout with a  upload button and images displayed side by side.
 
-### `npm test`
+# Libraries Used:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ => React - Javscript library for building the user interface.
+ => react-canvas-draw : Used for implementing the drawing canvas where users can create the mask on images.
+ =>FileReader API : Native browser API used to read images files uploaded by the user and display them as data URLs.
 
-### `npm run build`
+ # How to Run the Project Locally: 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository to your local machine:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+git clone <repository-url>
+cd image-inpainting-widget
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install the necessary dependencies: 
 
-### `npm run eject`
+npm install 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Start the development server: 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm start 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4.Open your browser and go to http://localhost:3000 to view the project.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Challenges Faced and How I overcame Them: 
 
-## Learn More
+1. Handling Image Upload and Displaying on Canvas: 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ * Challenge-1 : Here I got  challenge for  uploading images correctly on canvas was difficult, especially with resizing. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+ * Solution : I used the Filereader API to load the image and passed it to react-canvas-draw, ensuring proper display without scaling issues. 
 
-### Code Splitting
+ 2. Creating the Mask with the Brush Tool: 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+ * Challenge-2: It was tricky to render the mask with the white strokes and a black background. 
 
-### Analyzing the Bundle Size
+ * Solution: I customized the brush and background color in react-canvas-draw to achieve the desired mask effect. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+ 3. Exporting the Mask Image Correctly: 
 
-### Making a Progressive Web App
+ * Challenge: Ensuring the mask had white for the drawn areas and black for untouched areas was challenging. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+ *Solution : I created a temporary canvas, filled it with black, and overlayed the white strokes from the drawing to generate the correct mask.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
